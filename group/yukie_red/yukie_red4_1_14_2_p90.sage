@@ -2,6 +2,9 @@
 
 Note that  a,b in a group G, ab in Yukie = b*a in SageMath 
 
+e.g. (1 2)(1 3) in Yukie is G([(1,3)])*G([(1,2)])
+
+
 """
 
 from sage.all import *
