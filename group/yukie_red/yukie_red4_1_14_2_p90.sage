@@ -23,8 +23,8 @@ def injective_homomorphism(G):
     def rho(g):
         permutation = []
         for j, xi in enumerate(x):
-            k = x.index(xi*g)
-            permutation.append(k+1)
+            k = x.index(xi*g) + 1
+            permutation.append(k)
 
         return Sn(permutation)
 
@@ -36,6 +36,16 @@ def injective_homomorphism(G):
 
 
 def check_injective_homomorphism(x, y):
+    """ check homomorphism
+
+    Args:
+        x: elements of input Symmetric Group
+        y: elements of output Symmetric Group S_n (n=G.order())
+
+    Return:
+        bool: True or False
+
+    """
     order = len(x)
     for i in range(order):
         for j in range(order):
@@ -50,7 +60,6 @@ if __name__ == "__main__":
     
     G = SymmetricGroup(3)
     x, y, H = injective_homomorphism(G)
-
     print(G,"->", H)
     print(x, "->", y)
     print(check_injective_homomorphism(x, y))
